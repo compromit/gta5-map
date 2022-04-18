@@ -1,6 +1,9 @@
 var map = L.map('map').setView([0, 0.0], 2);
 var mapElem = document.getElementById("map");
 
+var rightClickLocationX = 0;
+var rightClickLocationY = 0;
+
 const settings = {
     attribution: '',
     maxZoom: 8,
@@ -31,11 +34,9 @@ var baseLayers = {
 atlas.addTo(map);
 L.control.layers(baseLayers).addTo(map);
 
-function onMapClick(e) {
-    console.log("hi");
+function addMapMarker(e) {
+    L.marker(e.latlng).addTo(map);
 }
-
-map.on('click', onMapClick);
 
 // Setting background-color of the map when the baselayer changes
 map.addEventListener("baselayerchange", e => mapElem.style.backgroundColor = colors[e.name], true);

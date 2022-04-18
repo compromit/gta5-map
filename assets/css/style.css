@@ -1,6 +1,8 @@
 html, body {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #map {
@@ -13,4 +15,69 @@ html, body {
     position: fixed;
     z-index: 10;
     width: 10vw;
+}
+
+.navbar-list li:hover .dropdown {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.context-menu {
+    padding: 1vh 0vw 1vh 0vw;
+    position: absolute;
+    text-align: left;
+
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+    z-index: 1000;
+}
+
+.context-menu ul {
+    padding: 0px;
+    margin: 0px;
+    min-width: 150px;
+    list-style: none;
+}
+
+.context-menu ul li {
+    padding-bottom: 7px;
+    padding-top: 7px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.context-menu ul li a {
+    text-decoration: none;
+    color: #2e3134;
+}
+
+.context-menu ul li:hover {
+    background-color: #ececec;
+}
+
+.draw-menu {
+    z-index: 999;
+    position: fixed;
+    top: 66px;
+    right: 10px;
+
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.draw-menu_inner {
+    width: 44px;
+    height: 44px;
+
+    background-color: white;
+
+    background-image: url(images/layers-2x.png);
+    background-size: 26px 26px;
+
+    border-radius: 3px;
 }

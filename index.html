@@ -23,6 +23,17 @@
     </script>
 </head>
 <body>
+    <div id="contextMenu" class="context-menu" style="display:none">
+        <ul>
+            <li><div>How about something else</div></li>
+            <li><div onclick="">Do something</a></li>
+        </ul>
+    </div>
+
+    <div id="drawMenu" class="draw-menu">
+        <div class="draw-menu_inner"></div>
+    </div>
+
     <div id="map" style="background-color: #12a7d2;"></div>
 
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
@@ -36,5 +47,11 @@
     </script>
 
     <script src="./assets/js/map.js"></script>
+    <script src="./assets/js/menu.js"></script>
+
+    <script>
+        document.onclick = hideMenu;
+        document.oncontextmenu = rightClick;
+    </script>
 </body>
 </html>

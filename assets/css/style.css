@@ -7,3 +7,10 @@ html, body {
     width: 100vw;
     height: 100vh;
 }
+
+#map-selector {
+    float: left;
+    position: fixed;
+    z-index: 10;
+    width: 10vw;
+}

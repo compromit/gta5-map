@@ -7,7 +7,6 @@
     <title>GTA 5 – Interactive Map</title>
 
     <link rel="icon" type="image/x-icon" href="./assets/img/icon.ico">
-
     <link rel="stylesheet" href="./lib/leaflet/leaflet.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 
@@ -26,6 +25,16 @@
 <body>
     <div id="map" style="background-color: #12a7d2;"></div>
 
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+    kofiWidgetOverlay.draw('holmsey', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#ffffff',
+        'floating-chat.donateButton.text-color': '#323842'
+    });
+    </script>
+    
     <script src="./assets/js/map.js"></script>
 </body>
 </html>

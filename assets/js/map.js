@@ -4,6 +4,9 @@ var mapElem = document.getElementById("map");
 var rightClickLocationX = 0;
 var rightClickLocationY = 0;
 
+map.options.minZoom = 2;
+map.options.maxZoom = 7;
+
 const activeColor   = "rgb(27, 118, 200)";
 const inactiveColor = "rgb(74, 74, 74)";
 

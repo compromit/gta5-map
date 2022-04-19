@@ -4,6 +4,11 @@ var mapElem = document.getElementById("map");
 var rightClickLocationX = 0;
 var rightClickLocationY = 0;
 
+const activeColor   = "rgb(27, 118, 200)";
+const inactiveColor = "rgb(74, 74, 74)";
+
+var mode = 'none';
+
 const settings = {
     attribution: '',
     maxZoom: 8,
@@ -34,9 +39,39 @@ var baseLayers = {
 atlas.addTo(map);
 L.control.layers(baseLayers).addTo(map);
 
-function addMapMarker(e) {
-    L.marker(e.latlng).addTo(map);
+function setActiveMode(tool) {
+    if (tool == mode) {
+        document.getElementById(tool).style.color = inactiveColor; 
+        mode = 'none';
+    } else {
+        try {
+            document.getElementById(mode).style.color = inactiveColor;
+        } catch (error) {
+            console.log(error);
+        }
+
+        mode = tool;
+        document.getElementById(mode).style.color = activeColor;
+    }
+
+    if (mode != 'none') {
+        document.getElementById('map').style.cursor = 'crosshair';
+    } else {
+        document.getElementById('map').style.cursor = '';
+    }
 }
+
+function toggleDrawShape() {
+    
+}
+
+function onClick(e) {
+    if (mode == 'dropPin') {
+        L.marker(e.latlng).addTo(map);
+    }
+}
+
+map.on('click', onClick);
 
 // Setting background-color of the map when the baselayer changes
 map.addEventListener("baselayerchange", e => mapElem.style.backgroundColor = colors[e.name], true);

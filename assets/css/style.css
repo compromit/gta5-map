@@ -61,18 +61,24 @@ html, body {
 }
 
 .draw-menu {
+    transition: ease-in-out 0.2s;
+
     z-index: 999;
     position: fixed;
     top: 66px;
     right: 10px;
+    width: 44px;
+    height: 44px;
 
     border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+
+    overflow: hidden;
 }
 
 .draw-menu_inner {
-    width: 44px;
-    height: 44px;
+    width: 100%;
+    height: 100%;
 
     background-color: white;
 
@@ -80,4 +86,38 @@ html, body {
     background-size: 26px 26px;
 
     border-radius: 3px;
+}
+
+.draw-menu_inner > ul {
+    padding: 0px;
+    margin: 0px;
+    min-width: 150px;
+    list-style: none;
+}
+
+.draw-menu_inner > ul > li {
+    float: left;
+    display: flex;
+    width: 44px;
+    height: 44px;
+    font-size: 26px;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: not-allowed;
+    color: rgb(199, 199, 199);
+}
+
+.draw-menu_inner > ul > li.active {
+    cursor: pointer;
+    color: rgb(74, 74, 74);
+}
+
+.draw-menu:hover {
+    transition: ease-in-out 0.2s;
+    width: 90px;
 }

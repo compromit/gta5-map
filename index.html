@@ -9,8 +9,9 @@
     <link rel="icon" type="image/x-icon" href="./assets/img/icon.ico">
     <link rel="stylesheet" href="./lib/leaflet/leaflet.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-
+    
     <script src="./lib/leaflet/leaflet.js"></script>
+    <script src="https://kit.fontawesome.com/5f8fc6008e.js" crossorigin="anonymous"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-09RNSB3HHX"></script>
@@ -31,7 +32,18 @@
     </div>
 
     <div id="drawMenu" class="draw-menu">
-        <div class="draw-menu_inner"></div>
+        <div class="draw-menu_inner">
+            <ul>
+                <li class='active' onclick="setActiveMode('dropPin')">
+                    <i id="dropPin" class="fa-solid fa-location-dot"></i>
+                </li>
+
+                <!--<li onclick="setActiveMode('drawShape')">-->
+                <li>
+                    <i id="drawShape" class="fa-solid fa-shapes"></i>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div id="map" style="background-color: #12a7d2;"></div>

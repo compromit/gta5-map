@@ -7,10 +7,19 @@
     <title>GTA 5 – Interactive Map</title>
 
     <link rel="icon" type="image/x-icon" href="./assets/img/icon.ico">
-    <link rel="stylesheet" href="./lib/leaflet/leaflet.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    
-    <script src="./lib/leaflet/leaflet.js"></script>
+
+    <link rel="stylesheet" href="./node_modules/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="./node_modules/leaflet-draw/dist/leaflet.draw.css" />
+
+    <script src="./node_modules/leaflet/dist/leaflet.js"></script>
+    <script src="./node_modules/leaflet-draw/dist/leaflet.draw.js"></script>
+
+    <script src="node_modules/leaflet-toolbar/dist/leaflet.toolbar.js"></script>
+    <script src="node_modules/leaflet-draw-toolbar/dist/leaflet.draw-toolbar.js"></script>
+    <link rel="stylesheet" href="node_modules/leaflet-toolbar/dist/leaflet.toolbar.css"/>
+    <link rel="stylesheet" href="node_modules/leaflet-draw-toolbar/dist/leaflet.draw-toolbar.css"/>
+
     <script src="https://kit.fontawesome.com/5f8fc6008e.js" crossorigin="anonymous"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -23,27 +32,13 @@
     gtag('config', 'G-09RNSB3HHX');
     </script>
 </head>
+
 <body>
     <div id="contextMenu" class="context-menu" style="display:none">
         <ul>
             <li><div>How about something else</div></li>
             <li><div onclick="">Do something</a></li>
         </ul>
-    </div>
-
-    <div id="drawMenu" class="draw-menu">
-        <div class="draw-menu_inner">
-            <ul>
-                <li class='active' onclick="setActiveMode('dropPin')">
-                    <i id="dropPin" class="fa-solid fa-location-dot"></i>
-                </li>
-
-                <!--<li onclick="setActiveMode('drawShape')">-->
-                <li>
-                    <i id="drawShape" class="fa-solid fa-shapes"></i>
-                </li>
-            </ul>
-        </div>
     </div>
 
     <div id="map" style="background-color: #12a7d2;"></div>
@@ -61,9 +56,9 @@
     <script src="./assets/js/map.js"></script>
     <script src="./assets/js/menu.js"></script>
 
-    <script>
+    <!--<script>
         document.onclick = hideMenu;
         document.oncontextmenu = rightClick;
-    </script>
+    </script>-->
 </body>
 </html>

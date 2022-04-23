@@ -1,6 +1,5 @@
 function hideMenu() {
-    document.getElementById(
-        "contextMenu").style.display = "none"
+    document.getElementById("contextMenu").style.display = "none"
 }
 
 function rightClick(e) {

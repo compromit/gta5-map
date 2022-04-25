@@ -27,22 +27,30 @@ var options = {
     draw: {
         polyline: {
             shapeOptions: {
-                color: '#000',
+                color: '#000000',
                 weight: 5
             }
         },
         polygon: {
             allowIntersection: false, // Restricts shapes to simple polygons
+            shapeOptions: {
+                color: '#000000',
+                weight: 5
+            },
             drawError: {
-                color: '#000', // Color the shape will turn when intersects
                 message: 'Polygons cannot intersect themselves' // Message that will show when intersect
             }
         },
-        circle: true,
+        circle: {
+            shapeOptions: {
+                color: '#000000',
+                weight: 5
+            }
+        },
         circlemarker: false,
         rectangle: {
             shapeOptions: {
-                color: '#000',
+                color: '#000000',
                 weight: 5
             }
         }
@@ -51,12 +59,11 @@ var options = {
         featureGroup: editableLayers,
         remove: true
     }
-};
+}
 
 var drawControl = new L.Control.Draw(options);
 
 map.addControl(drawControl);
-
 
 map.on(L.Draw.Event.CREATED, function (e) {
     var type = e.layerType,

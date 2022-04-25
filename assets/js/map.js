@@ -6,6 +6,8 @@ map.options.maxZoom = 7;
 const activeColor   = "rgb(27, 118, 200)";
 const inactiveColor = "rgb(74, 74, 74)";
 
+var optionColorSelected = '#000'
+
 const settings = {
     attribution: 'compromit',
     maxZoom: 8,
@@ -16,9 +18,8 @@ const settings = {
     noWrap: true
 }
 
-// --
-
 var editableLayers = new L.FeatureGroup();
+
 map.addLayer(editableLayers);
 
 var options = {
@@ -26,24 +27,28 @@ var options = {
     draw: {
         polyline: {
             shapeOptions: {
-                color: '#f357a1',
+                color: '#000',
                 weight: 5
             }
         },
         polygon: {
             allowIntersection: false, // Restricts shapes to simple polygons
             drawError: {
-                color: '#e1e100', // Color the shape will turn when intersects
+                color: '#000', // Color the shape will turn when intersects
                 message: 'Polygons cannot intersect themselves' // Message that will show when intersect
             }
         },
-        circle: false,
+        circle: true,
         circlemarker: false,
-        rectangle: true
+        rectangle: {
+            shapeOptions: {
+                color: '#000',
+                weight: 5
+            }
+        }
     },
     edit: {
         featureGroup: editableLayers,
-        edit: true,
         remove: true
     }
 };
@@ -55,6 +60,8 @@ map.addControl(drawControl);
 map.on(L.Draw.Event.CREATED, function (e) {
     var type = e.layerType,
         layer = e.layer;
+
+    e.layer.options.color = document.getElementById("colorpicker").value;
 
     editableLayers.addLayer(layer);
 });
@@ -79,6 +86,17 @@ var baseLayers = {
 atlas.addTo(map);
 L.control.layers(baseLayers).addTo(map);
 
+$("<div id='colorpicker-wrapper'><input type='color' id='colorpicker' value='#0000ff'></div>").appendTo('.leaflet-draw-toolbar:first')
+
+var color_picker = document.getElementById("colorpicker");
+var color_picker_wrapper = document.getElementById("colorpicker-wrapper");
+color_picker.onchange = function() {
+	color_picker_wrapper.style.backgroundColor = color_picker.value;    
+}
+color_picker_wrapper.style.backgroundColor = color_picker.value;
+
 // Setting background-color of the map when the baselayer changes
 map.addEventListener("baselayerchange", e => mapElem.style.backgroundColor = colors[e.name], true);
-  
+
+window.addEventListener('resize', 
+	() => map.getViewPort().resize());

@@ -59,3 +59,16 @@ html, body {
 .context-menu ul li:hover {
     background-color: #ececec;
 }
+
+input[type="color"] {
+	opacity: 0;
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: none;
+}
+#color-picker-wrapper {
+	float: left;
+    width: 30px;
+    height: 30px;
+}

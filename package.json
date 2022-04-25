@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "jquery": "^3.6.0",
     "leaflet": "^1.8.0",
     "leaflet-draw-toolbar": "^0.3.0-alpha.1",
     "leaflet-toolbar": "^0.4.0-alpha.2"

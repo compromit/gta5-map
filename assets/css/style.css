@@ -67,7 +67,8 @@ input[type="color"] {
 	height: 30px;
 	border: none;
 }
-#color-picker-wrapper {
+
+#colorpicker-wrapper {
 	float: left;
     width: 30px;
     height: 30px;

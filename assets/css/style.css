@@ -61,6 +61,7 @@ html, body {
 }
 
 input[type="color"] {
+    cursor: pointer;
 	opacity: 0;
 	display: block;
 	width: 30px;
@@ -69,6 +70,7 @@ input[type="color"] {
 }
 
 #colorpicker-wrapper {
+    cursor: pointer;
     width: 30px;
     height: 30px;
 }
